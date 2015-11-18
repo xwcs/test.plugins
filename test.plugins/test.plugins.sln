@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.plugins", "test.plugins.csproj", "{C030753F-57D6-4F1A-835B-0CE7FA1ADEF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib.core", "..\lib.core\lib.core.csproj", "{64DD06EA-E442-4101-99B5-351C6A160472}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xwcs.core", "..\xwcs.core\xwcs.core.csproj", "{64DD06EA-E442-4101-99B5-351C6A160472}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
