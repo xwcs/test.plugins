@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:test.plugins"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    
+    <StackPanel x:Name="MainPanel"/>
 </Window>

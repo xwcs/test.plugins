@@ -1,11 +1,11 @@
-﻿using PluginContracts;
-using Events;
+﻿using xwcs.core.plgs;
+using xwcs.core.evt;
 
 namespace SecondPlugin
 {
 	public class SecondPlugin : IPlugin
 	{
-        private IHost _host;
+        private IPluginHost _host;
 
         public SecondPlugin()
         {
@@ -13,7 +13,7 @@ namespace SecondPlugin
 
         #region IPlugin Members
 
-        public string Name
+        public string name
 		{
 			get
 			{
@@ -21,30 +21,24 @@ namespace SecondPlugin
 			}
 		}
 
-        public void Init(IHost h)
+        public void init(IPluginHost h)
         {
             _host = h;
-            _host.proxy.addEventHandler(EventKind.GenericEvent, HnadleGenericEvent);
-            _host.proxy.addEventHandler(EventKind.CloseEvent, HandleCloseEvent);
-
+            _host.proxy.addEventHandler(EventType.GenericEvent, HandleGenericEvent);
         }
 
-        public void Do()
+        public void testFireEvent()
 		{
             System.Console.WriteLine("Do Something in Second Plugin");
-            _host.proxy.fireEvent(new GenericEvent(this, "message form second"));
+            _host.proxy.fireEvent(new GenericEvent(this, "Message from second plugin"));
         }
 
         #endregion
 
-        private void HnadleGenericEvent(EventData e)
+        private void HandleGenericEvent(EventData e)
         {
-            System.Console.WriteLine("Second plugin : Som tu !!! : " + e.Data);
+            System.Console.WriteLine("Second plugin got event, data : " + e.data);
         }
 
-        private void HandleCloseEvent(EventData e)
-        {
-            System.Console.WriteLine("Second plugin : Close !!! : " + e.Data);
-        }
     }
 }
